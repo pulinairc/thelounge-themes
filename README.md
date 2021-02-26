@@ -30,8 +30,8 @@ Aiming to be the **perfect** The Lounge theme out there.
 
 #### I want to change something!
 
-Please fork this repository and make your changes.
-If they are good we might even accept PRs.
+Please fork this repository and make your changes.<br>
+If the changes are good we might even accept pull requests.
 
 #### I just want a bigger font to mobile
 
@@ -59,5 +59,8 @@ Add this to Settings > Advanced Settings > Custom Stylesheet:
 
 1. `cd /path/to/thelounge-themes`
 2. `npm install`
-3. Based on which theme you are editing, run: `scss --watch src/midnight.scss:dist/midnight.css --style compressed`
-4. Start coding by running in separate Terminal: `code .` or just use any editor you wish
+3. Start coding by running in separate Terminal: `code .` or just use any editor you wish
+4. Run watchers:
+
+For <b>midnight</b>: `scss --watch src/midnight.scss:dist/midnight.css --style compressed`<br>
+For <b>day</b>: `scss --watch src/day.scss:dist/day.css --style compressed`<br>
