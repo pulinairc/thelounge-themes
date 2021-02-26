@@ -1,0 +1,26 @@
+{
+  "name": "thelounge-themes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pulinairc/thelounge-themes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pulinairc/thelounge-themes/issues"
+  },
+  "homepage": "https://github.com/pulinairc/thelounge-themes#readme",
+  "devDependencies": {
+    "scss": "^0.2.4",
+    "stylelint": "^13.11.0",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0"
+  }
+}
