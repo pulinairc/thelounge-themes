@@ -64,7 +64,7 @@ Good, legible Google webfonts for IRC: Archivo, Exo 2, Fira Sans, Heebo, IBM Ple
 }
 
 body {
-  font: 14px 'Alliance No. 1', -apple-system, 'Roboto', 'Rubik', system-ui, Segoe UI, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, Arial;
+  font: 14px 'Alliance No. 1', -apple-system, 'Roboto', 'Rubik', system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, Arial;
   /* -moz-osx-font-smoothing: grayscale; */
   -webkit-font-smoothing: subpixel-antialiased;
   /* text-rendering: geometricPrecision; */
@@ -180,7 +180,6 @@ body {
   opacity: 1;
 }
 
-.messages .msg .from,
 .messages .msg {
   font-size: var(--font-size-msg);
   font-weight: var(--font-weight-msg);
@@ -246,9 +245,7 @@ input {
 
   #chat .msg:not(.closed):not([data-type=condensed]),
   #chat .msg:not(.closed):not([data-type=condensed])[data-type="message"] {
-    clear: both;
-    display: inline-block;
-    float: left;
+    display: flex;
   }
 
   #chat .msg.closed[data-type=condensed] .msg {
@@ -274,7 +271,7 @@ input {
     flex: 1 1 auto !important;
     min-width: 0 !important;
     overflow: hidden !important;
-    padding: 2px 6px 2px 5px !important;
+    padding: 2px 6px 2px 10px !important;
     text-align: left !important;
   }
 }
@@ -882,134 +879,4 @@ body:not(.public) #connectform h2 {
 
 #sidebar .empty {
   display: none;
-}
-
-// Import overrides
-/* Conversation layout, only on mobile */
-@media (max-width: 479px) {
-  #chat .msg .time {
-    margin-right: 5px;
-    position: static;
-    white-space: normal;
-  }
-
-  // Bubble-like layout
-  #chat .msg {
-    background: rgba(#122046, .7);
-    border-radius: 8px;
-    margin: 4px 10px;
-    max-width: 90%;
-    padding: 8px 10px 5px 5px;
-  }
-
-  #chat .chat-view[data-type=channel] .msg.highlight {
-    background: #2d3e6d !important;
-    padding: 8px 10px 5px 5px;
-
-    &.previous-source {
-      margin-top: -1px;
-      padding: 1px 5px 3px;
-    }
-  }
-
-  #chat .msg.self {
-    background: lighten(#122042, 9%);
-    float: right !important;
-    justify-self: flex-end;
-    margin-left: auto;
-    max-width: 90%;
-    padding: 8px 10px 5px 5px;
-
-    &.previous-source {
-      padding: 2px 5px 0;
-    }
-
-    .time {
-      color: lighten(#374468, 12%) !important;
-    }
-  }
-
-  #chat .msg.previous-source {
-    margin-top: -1px;
-    padding: 2px 5px 0;
-  }
-
-  #chat .msg + .msg.previous-source .time,
-  #chat .msg + .msg.previous-source .from {
-    display: none !important;
-  }
-
-  #chat .msg[data-type="message"] .from {
-    display: inline-block !important;
-    float: left;
-    padding-left: 5px !important;
-    text-align: left !important;
-    width: auto !important;
-  }
-
-  #chat .msg:not([data-type="message"]) .from {
-    display: none;
-  }
-
-  #chat .msg:not([data-type="message"]) .from::before {
-    display: none;
-  }
-
-  #chat .msg[data-type="message"] {
-    flex-wrap: wrap !important;
-  }
-
-  #chat .msg[data-type="message"] .content {
-    clear: both;
-    display: inline-block;
-    float: left;
-    padding-bottom: 5px !important;
-    padding-top: 5px !important;
-    white-space: normal;
-    width: auto;
-  }
-
-  #chat .msg:not([data-type="message"]) .content {
-    border: 0 !important;
-    opacity: .85;
-  }
-
-  #chat .msg:not([data-type="message"]) .time {
-    display: none;
-  }
-
-  #chat .content {
-    border: 0 !important;
-    display: block;
-  }
-
-  #chat .toggle-content {
-    margin-top: 8px;
-  }
-
-  #chat .toggle-content .toggle-text {
-    white-space: normal;
-  }
-
-  #chat .toggle-content:not(.toggle-type-image) .toggle-thumbnail {
-    max-height: 100%;
-  }
-}
-
-/* Mobile font sizes */
-@media (max-width: 479px) {
-  .messages .msg,
-  .messages .msg .content {
-    font-size: 17px;
-  }
-
-  .messages .msg .from {
-    font-size: 17px;
-  }
-
-  .messages .msg .time {
-    align-self: flex-start;
-    font-size: 17px;
-    line-height: 1.9;
-  }
 }

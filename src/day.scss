@@ -64,12 +64,12 @@ body {
   --body-bg-color: #13131a;
   --button-color: #84ce88;
   --button-text-color-hover: #fff;
-  --overlay-bg-color: rgba(0, 0, 0, 0.5);
+  --overlay-bg-color: rgba(0, 0, 0, .5);
   --link-color: #364882;
   --window-bg-color: #fff;
   --window-heading-color: #6c797a;
-  --date-marker-color: rgba(0, 107, 59, 0.5);
-  --unread-marker-color: rgba(231, 76, 60, 0.5);
+  --date-marker-color: rgba(0, 107, 59, .5);
+  --unread-marker-color: rgba(231, 76, 60, .5);
   --highlight-bg-color: #c0c5ef52;
   --highlight-border-color: #9093cc;
   --upload-progressbar-color: var(--button-color);
@@ -84,7 +84,7 @@ body {
   font-weight: var(--font-weight-user);
 }
 
-.channel-list-item .add-channel:before {
+.channel-list-item .add-channel::before {
   font-family: -apple-system, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, Arial;
   font-size: 19px;
 }
@@ -113,7 +113,7 @@ body {
 
 .window {
   border-radius: 0;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 25px rgba(0, 0, 0, .5);
 }
 
 #chat .chat-view[data-type=channel] .msg.highlight {
@@ -140,10 +140,10 @@ body {
 }
 
 #chat .time {
+  font-size: 14px;
+  font-weight: 300;
   opacity: .2;
   order: 8;
-  font-weight: 300;
-  font-size: 14px;
   transition: all .55s;
 }
 
@@ -203,25 +203,25 @@ input {
   }
 
   #chat .time {
-    width: 35px !important;
-    white-space: nowrap;
     overflow: visible;
+    white-space: nowrap;
+    width: 35px !important;
   }
 
   #chat .from {
+    flex: 0 0 auto;
     -webkit-mask-image: linear-gradient(270deg, transparent, #000 10px) !important;
     mask-image: linear-gradient(270deg, transparent, #000 10px) !important;
     padding: 2px 10px 0 0 !important;
-    flex: 0 0 auto;
     width: 75px !important;
   }
 
   #chat .content {
+    border-left: 1px solid #eee !important;
     flex: 1 1 auto !important;
     min-width: 0 !important;
-    padding: 2px 6px 2px 10px !important;
-    border-left: 1px solid #eee !important;
     overflow: hidden !important;
+    padding: 2px 6px 2px 10px !important;
     text-align: left !important;
   }
 }
@@ -230,16 +230,16 @@ input {
   border-left: 1px solid #eee !important;
 }
 
-.channel-list-item[data-type=channel]:before,
-.context-menu-chan:before {
+.channel-list-item[data-type=channel]::before,
+.context-menu-chan::before {
   content: "\f086";
 }
 
 @media (min-width: 770px) {
-  .channel-list-item:before {
-    width: 15px;
-    margin-right: 12px;
+  .channel-list-item::before {
     line-height: 18px;
+    margin-right: 12px;
+    width: 15px;
   }
 
   #sidebar .empty,
@@ -253,9 +253,9 @@ input {
 }
 
 .logo-container {
-  opacity: 0 !important;
   height: 0 !important;
   margin-top: -7px !important;
+  opacity: 0 !important;
 }
 
 .networks {
@@ -289,8 +289,8 @@ body #chat .toggle-content .thumb {
 }
 
 #chat .toggle-content {
-  background: #f0f0f0;
   align-items: center;
+  background: #f0f0f0;
   border-radius: 5px;
   box-shadow: none;
   margin-bottom: 3px;
@@ -319,13 +319,13 @@ body #chat .toggle-content .thumb {
 
 @media (max-width: 500px) {
   #chat .toggle-content .thumb {
-    min-height: 0;
     max-height: 54px;
+    min-height: 0;
   }
 
   #chat .toggle-content .toggle-text {
-    padding: 8px 10px;
     font-size: 14px;
+    padding: 8px 10px;
   }
 
   #form #submit,
@@ -339,10 +339,10 @@ body #chat .toggle-content .thumb {
 }
 
 #form #input {
-  max-height: 100% !important;
-  overflow-y: auto !important;
-  overflow-x: none !important;
   height: 19px !important;
+  max-height: 100% !important;
+  overflow-x: none !important;
+  overflow-y: auto !important;
 }
 
 .textcomplete-item a {
@@ -355,16 +355,16 @@ body #chat .toggle-content .thumb {
 
 #chat .msg[data-type=condensed] .msg,
 #chat .msg {
-  padding-top: 0;
   padding-bottom: 0;
+  padding-top: 0;
 
   @media (max-width: 479px) {
-    padding-top: 0;
     padding-bottom: 0;
+    padding-top: 0;
   }
 }
 
-#chat .from:after,
+#chat .from::after,
 #chat .from::after {
   display: none !important;
 

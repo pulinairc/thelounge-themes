@@ -20,6 +20,7 @@ Aiming to be the **perfect** The Lounge theme out there.
 - The most readable modern fonts on Retina and 60hz mobile screens
 
 ![Screenshot](https://i.imgur.com/fOVc5Gt.png "Screenshot")
+![Screenshot](https://i.imgur.com/lOyUUnj.jpg "Screenshot")
 
 ## Installation
 
@@ -64,4 +65,5 @@ Add this to Settings > Advanced Settings > Custom Stylesheet:
 
 For <b>midnight</b>: `scss --watch src/midnight.scss:dist/midnight.css --style compressed`<br>
 For <b>day</b>: `scss --watch src/day.scss:dist/day.css --style compressed`<br>
-For <b>auto-day-midnight</b>: `scss --watch src/auto-day-midnight.scss:dist/auto-day-midnight.css --style compressed`
+For <b>auto-day-midnight</b>: `scss --watch src/auto-day-midnight.scss:dist/auto-day-midnight.css --style compressed`<br>
+For <b>midnight-classic-mobile</b>: scss --watch src/miight-classic-mobile.scss:dist/midnight-classic-mobile.css --style compressed`
