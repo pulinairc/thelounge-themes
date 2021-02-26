@@ -19,8 +19,9 @@ Aiming to be the **perfect** The Lounge theme out there.
 - Fixed preview images with correct dimensions
 - The most readable modern fonts on Retina and 60hz mobile screens
 
-![Screenshot](https://i.imgur.com/fOVc5Gt.png "Screenshot")
-<img src="https://i.imgur.com/lOyUUnj.jpg" width="400px" height="auto">
+| Desktop view  | Mobile conversation layout |
+| ------------- | ------------- |
+| ![Screenshot](https://i.imgur.com/fOVc5Gt.png "Screenshot")l  | <img src="https://i.imgur.com/lOyUUnj.jpg" width="400px" height="auto"> |
 
 ## Installation
 
