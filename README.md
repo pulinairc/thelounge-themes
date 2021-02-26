@@ -2,9 +2,7 @@
 
 #### Used by the popular Finnish channel [#pulina @ QuakeNet](https://www.pulina.fi)
 
-[![GitHub release](https://img.shields.io/github/tag/pulinairc/thelounge-themes.svg?style=flat-square)](https://github.com/pulinairc/thelounge-themes/releases) [![The Lounge](https://img.shields.io/badge/tested%20with%20thelounge-4.2.0-ff9e18.svg?style=flat-square)](https://github.com/thelounge/thelounge) 
-[![GitHub contributors](https://img.shields.io/github/contributors/pulinairc/thelounge-themes.svg?style=flat-square)](https://github.com/ronilaukkarinen/weed/graphs/contributors) 
-[![Twitter Follow](https://img.shields.io/twitter/follow/rolle.svg?style=social&label=Follow)](https://twitter.com/rolle)
+[![GitHub release](https://img.shields.io/github/tag/pulinairc/thelounge-themes.svg?style=flat-square)](https://github.com/pulinairc/thelounge-themes/releases) [![The Lounge](https://img.shields.io/badge/tested%20with%20thelounge-4.2.0-ff9e18.svg?style=flat-square)](https://github.com/thelounge/thelounge)
 
 Aiming to be the **perfect** The Lounge theme out there.
 
