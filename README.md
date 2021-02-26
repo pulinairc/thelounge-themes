@@ -20,7 +20,7 @@ Aiming to be the **perfect** The Lounge theme out there.
 - The most readable modern fonts on Retina and 60hz mobile screens
 
 ![Screenshot](https://i.imgur.com/fOVc5Gt.png "Screenshot")
-![Screenshot](https://i.imgur.com/lOyUUnj.jpg "Screenshot")
+<img src="https://i.imgur.com/lOyUUnj.jpg" width="400px" height="auto">
 
 ## Installation
 
