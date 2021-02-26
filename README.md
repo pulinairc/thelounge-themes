@@ -30,7 +30,8 @@ Aiming to be the **perfect** The Lounge theme out there.
 
 #### I want to change something!
 
-Please fork this repository and make your changes. If they are good we might even accept PRs.
+Please fork this repository and make your changes.
+If they are good we might even accept PRs.
 
 #### I just want a bigger font to mobile
 
@@ -41,9 +42,11 @@ Add this to Settings > Advanced Settings > Custom Stylesheet:
   .messages .msg {
     font-size: 18px !important;
   }
+  
   .from {
     font-size: 18px !important;
   }
+  
   .time {
     font-size: 15px !important;
     align-self: flex-start;
