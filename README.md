@@ -42,14 +42,14 @@ Add this to Settings > Advanced Settings > Custom Stylesheet:
   .messages .msg {
     font-size: 18px !important;
   }
-  
+
   .from {
     font-size: 18px !important;
   }
-  
+
   .time {
-    font-size: 15px !important;
     align-self: flex-start;
+    font-size: 15px !important;
     line-height: 1.9;
   }
 }
@@ -64,3 +64,4 @@ Add this to Settings > Advanced Settings > Custom Stylesheet:
 
 For <b>midnight</b>: `scss --watch src/midnight.scss:dist/midnight.css --style compressed`<br>
 For <b>day</b>: `scss --watch src/day.scss:dist/day.css --style compressed`<br>
+For <b>auto-day-midnight</b>: `scss --watch src/auto-day-midnight.scss:dist/auto-day-midnight.css --style compressed`

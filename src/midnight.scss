@@ -890,8 +890,8 @@ body:not(.public) #connectform h2 {
 
   #chat .msg[data-type="message"] .content {
     max-width: 90%;
-    padding-top: 5px !important;
     padding-bottom: 5px !important;
+    padding-top: 5px !important;
   }
 
   #chat .msg .time {
@@ -899,16 +899,16 @@ body:not(.public) #connectform h2 {
     right: 5px;
   }
 
-  #chat .msg+.msg.previous-source .time,
-  #chat .msg+.msg.previous-source .from {
+  #chat .msg + .msg.previous-source .time,
+  #chat .msg + .msg.previous-source .from {
     display: none !important;
   }
 
   #chat .msg[data-type="message"] .from {
-    padding-left: 5px !important;
-    width: 100% !important;
-    text-align: left !important;
     display: flex !important;
+    padding-left: 5px !important;
+    text-align: left !important;
+    width: 100% !important;
   }
 
   #chat .msg:not([data-type="message"]) .from {
@@ -921,16 +921,16 @@ body:not(.public) #connectform h2 {
 
   #chat .msg:not([data-type="message"]) .content {
     border: 0 !important;
+    max-width: 90%;
+    opacity: .7;
+    padding-bottom: 5px !important;
     padding-left: 5px !important;
     padding-top: 5px !important;
-    padding-bottom: 5px !important;    
-    opacity: .7;
-    max-width: 90%;
   }
-  
+
   #chat .content {
-    padding-left: 5px !important;
     border: 0 !important;
+    padding-left: 5px !important;
   }
 }
 
@@ -946,8 +946,8 @@ body:not(.public) #connectform h2 {
   }
 
   .messages .msg .time {
-    font-size: 17px;
     align-self: flex-start;
+    font-size: 17px;
     line-height: 1.9;
   }
 }

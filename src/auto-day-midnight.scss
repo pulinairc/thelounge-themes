@@ -1,0 +1,5 @@
+@import 'day';
+
+@media (prefers-color-scheme: dark) {
+  @import 'midnight';
+}
