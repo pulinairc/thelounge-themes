@@ -1,3 +1,7 @@
+### 1.0.6: 2021-02-27
+
+* Make sure font sizes are the same everywhere
+
 ### 1.0.5: 2021-02-27
 
 * Force scroll only on mobile devices `overflow-y: scroll;`
