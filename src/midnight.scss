@@ -16,6 +16,8 @@
   --date-marker-color: rgba(40, 42, 54, .5);
   --unread-marker-color: #ff79c6;
   --highlight-bg-color: rgba(255, 255, 255, .08);
+  --highlight-bg-color-mobile-conversation-layout: #2d3e6d;
+  --background-color-msg-self-conversation-layout: lighten(#122042, 9%);
   --highlight-msg-color: #fff;
   --highlight-border-color: #44475a;
   --upload-progressbar-color: #50fa7b;
@@ -993,7 +995,7 @@ body #connectform input.input {
   }
 
   #chat .chat-view[data-type=channel] .msg.highlight {
-    background: #2d3e6d !important;
+    background: var(--highlight-bg-color-mobile-conversation-layout) !important;
 
     &.previous-source {
       margin-top: -1px;
@@ -1005,7 +1007,7 @@ body #connectform input.input {
   }
 
   #chat .msg.self {
-    background: lighten(#122042, 9%);
+    background: var(--background-color-msg-self-conversation-layout);
 
     // Have to use !imporant here to override
     float: right !important;
