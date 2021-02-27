@@ -1,4 +1,8 @@
-### 1.0.3: 2021-02-27
+### 1.0.5: 2021-02-27
+
+* Force scroll only on mobile devices `overflow-y: scroll;`
+
+### 1.0.4: 2021-02-27
 
 * Test font size on zoomed layout
 * Add accessible version with bigger fonts for Android

@@ -150,11 +150,14 @@ body {
   font-size: initial;
   /* -moz-osx-font-smoothing: grayscale; */
   -webkit-font-smoothing: subpixel-antialiased;
-  overflow-y: scroll;
   /* text-rendering: geometricPrecision; */
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
+
+  @media (max-width: $breakpoint-mobile) {
+    overflow-y: scroll;
+  }
 }
 
 html * {
