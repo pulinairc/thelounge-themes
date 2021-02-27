@@ -961,12 +961,16 @@ body:not(.public) #connectform h2 {
 
   #chat .msg[data-type="message"] .content {
     clear: both;
-    display: inline-block;
-    float: left;
+    display: block;
+    float: none;
     padding-bottom: 5px !important;
     padding-top: 5px !important;
     white-space: normal;
     width: auto;
+
+    &.previous-source {
+      display: inline-block;
+    }
   }
 
   #chat .msg:not([data-type="message"]) .content {
