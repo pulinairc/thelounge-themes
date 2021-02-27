@@ -898,7 +898,7 @@ body:not(.public) #connectform h2 {
     background: rgba(#122046, .7);
     border-radius: 8px;
     margin: 4px 10px;
-    max-width: 90%;
+    max-width: 82%;
     padding: 8px 10px 5px 5px;
   }
 
@@ -918,10 +918,16 @@ body:not(.public) #connectform h2 {
     justify-self: flex-end;
     margin-left: auto;
     max-width: 90%;
-    padding: 8px 10px 5px 5px;
+    padding: 2px 5px 1px;
+
+    // No need for own nick on mobile
+    .from,
+    .time {
+      display: none !important;
+    }
 
     &.previous-source {
-      padding: 2px 5px 0;
+      padding: 2px 5px 1px;
     }
 
     .time {
@@ -931,7 +937,7 @@ body:not(.public) #connectform h2 {
 
   #chat .msg.previous-source {
     margin-top: -1px;
-    padding: 2px 5px 0;
+    padding: 2px 5px 1px;
   }
 
   #chat .msg + .msg.previous-source .time,
@@ -940,7 +946,7 @@ body:not(.public) #connectform h2 {
   }
 
   #chat .msg[data-type="message"] .from {
-    display: inline-block !important;
+    display: inline-block;
     float: left;
     padding-left: 5px !important;
     text-align: left !important;
@@ -967,10 +973,10 @@ body:not(.public) #connectform h2 {
     padding-top: 5px !important;
     white-space: normal;
     width: auto;
+  }
 
-    &.previous-source {
-      display: inline-block;
-    }
+  #chat .msg[data-type="message"].previous-source .content {
+    display: inline-block;
   }
 
   #chat .msg:not([data-type="message"]) .content {
