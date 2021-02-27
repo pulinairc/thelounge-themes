@@ -887,6 +887,14 @@ body:not(.public) #connectform h2 {
 // Import overrides
 /* Conversation layout, only on mobile */
 @media (max-width: 479px) {
+  #chat .date-marker::before {
+    top: 1px;
+  }
+
+  #chat .date-marker-text::before {
+    white-space: nowrap;
+  }
+
   #chat .msg .time {
     margin-right: 5px;
     position: static;
@@ -917,7 +925,7 @@ body:not(.public) #connectform h2 {
     float: right !important;
     justify-self: flex-end;
     margin-left: auto;
-    max-width: 90%;
+    max-width: 82%;
     padding: 2px 5px 1px;
 
     // No need for own nick on mobile
@@ -928,6 +936,10 @@ body:not(.public) #connectform h2 {
 
     &.previous-source {
       padding: 2px 5px 1px;
+
+      .content {
+        margin-bottom: -6px;
+      }
     }
 
     .time {
