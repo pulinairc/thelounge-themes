@@ -1,4 +1,4 @@
-### 1.0.3: 2021-02-27
+### 1.0.4: 2021-02-27
 
 * Test font size on zoomed layout
 * Add accessible version with bigger fonts for Android
