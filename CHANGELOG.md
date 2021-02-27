@@ -1,3 +1,9 @@
+### 1.0.2: 2021-02-27
+
+* Make mobile layout more natural by hiding timestamps and nicks from own messages
+* Max-width for more natural mobile layout
+* Several small mobile fixes
+
 ### 1.0.1: 2021-02-27
 
 * Add conversation layout
