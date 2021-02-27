@@ -1,5 +1,10 @@
 // Variables
 :root {
+  // SCSS helper vars
+  $background-color-msg-self-conversation-layout: lighten(#122042, 9%);
+  $color-timestamp-self-mobile-conversation-layout: lighten(#374468, 12%);
+
+  // CSS vars
   --body-color: rgba(255, 255, 255, .75);
   --msg-self-color: rgb(236, 248, 255);
   --msg-self-bg-color: #1b1f27;
@@ -17,7 +22,7 @@
   --unread-marker-color: #ff79c6;
   --highlight-bg-color: rgba(255, 255, 255, .08);
   --highlight-bg-color-mobile-conversation-layout: #2d3e6d;
-  --background-color-msg-self-conversation-layout: lighten(#122042, 9%);
+  --background-color-msg-self-conversation-layout: #{$background-color-msg-self-conversation-layout};
   --highlight-msg-color: #fff;
   --highlight-border-color: #44475a;
   --upload-progressbar-color: #50fa7b;
@@ -28,7 +33,7 @@
   --color-toggle-content-body: #99a2b4;
   --color-chat-container-placeholder: #99a2b4;
   --color-date-marker: #97ea70;
-  --color-timestamp-self-mobile-conversation-layout: lighten(#374468, 12%);
+  --color-timestamp-self-mobile-conversation-layout: #{$color-timestamp-self-mobile-conversation-layout};
 
   // Font related
   --font-size: 15px;
@@ -997,6 +1002,10 @@ body #connectform input.input {
   #chat .chat-view[data-type=channel] .msg.highlight {
     background: var(--highlight-bg-color-mobile-conversation-layout) !important;
 
+    .time {
+      color: var(--color-timestamp-self-mobile-conversation-layout);
+    }
+
     &.previous-source {
       margin-top: -1px;
 
@@ -1031,7 +1040,7 @@ body #connectform input.input {
     }
 
     .time {
-      color: var(--color-timestamp-self-mobile-conversation-layout) !important;
+      color: var(--color-timestamp-self-mobile-conversation-layout);
     }
   }
 
