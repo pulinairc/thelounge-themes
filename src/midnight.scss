@@ -274,7 +274,7 @@ input {
     flex: 1 1 auto !important;
     min-width: 0 !important;
     overflow: hidden !important;
-    padding: 2px 6px 2px 5px !important;
+    padding: 2px 5px;
     text-align: left !important;
   }
 }
@@ -953,7 +953,11 @@ body:not(.public) #connectform h2 {
 
   #chat .msg.previous-source {
     margin-top: -1px;
-    padding: 2px 5px 1px;
+    padding: 1px 5px;
+
+    .content {
+      margin-bottom: -6px;
+    }
   }
 
   #chat .msg + .msg.previous-source .time,
