@@ -916,7 +916,11 @@ body:not(.public) #connectform h2 {
 
     &.previous-source {
       margin-top: -1px;
-      padding: 1px 5px 3px;
+      padding: 1px 5px;
+
+      .content {
+        margin-bottom: -4px;
+      }
     }
   }
 
