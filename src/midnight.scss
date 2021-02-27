@@ -1,7 +1,75 @@
-/* Fonts
+// Variables
+:root {
+  --body-color: rgba(255, 255, 255, .75);
+  --msg-self-color: rgb(236, 248, 255);
+  --msg-self-bg-color: #1b1f27;
+  --msg-action-color: #f1fa8c;
+  --border-color: #20283b;
+  --body-color-muted: #6272a4;
+  --body-bg-color: #0b152b;
+  --button-color: #50fa7b;
+  --button-text-color-hover: #282a36;
+  --overlay-bg-color: rgba(0, 0, 0, .5);
+  --link-color: #f8f8f2;
+  --window-bg-color: #0d162d;
+  --window-heading-color: #44475a;
+  --date-marker-color: rgba(40, 42, 54, .5);
+  --unread-marker-color: #ff79c6;
+  --highlight-bg-color: rgba(255, 255, 255, .08);
+  --highlight-msg-color: #fff;
+  --highlight-border-color: #44475a;
+  --upload-progressbar-color: #50fa7b;
+  --time-color: #374468;
+  --time-color-hover: #42527e;
+  --channel-list-item-hover-background: rgba(255, 255, 255, .05);
+  --color-toggle-content: #f3f3f3;
+  --color-toggle-content-body: #99a2b4;
+  --color-chat-container-placeholder: #99a2b4;
+  --color-date-marker: #97ea70;
+  --color-timestamp-self-mobile-conversation-layout: lighten(#374468, 12%);
 
-Good, legible Google webfonts for IRC: Archivo, Exo 2, Fira Sans, Heebo, IBM Plex Sans, Noto Sans, Open Sans, Roboto, Rubik, Source Sans Pro, Titillium Web, Ubuntu
-*/
+  // Font related
+  --font-size: 15px;
+  --font-size-msg: 15px;
+  --font-size-chat-timestamp: 15px;
+  --font-size-channel-list: 15px;
+  --font-size-embed-text: 15px;
+  --font-size-form-submit-mobile: 18px;
+  --font-size-inputs: 22px;
+  --font-size-join: 20px;
+  --font-weight-msg: 300;
+  --font-weight-user: 500;
+  --font-weight-toggle-chanlist: 500;
+  --font-weight-chat-timestamp: 300;
+  --line-height-chat-msg: 1.45;
+
+  // Base colors that don't need to be touched
+  --color-webkit-tap: rgba(0, 0, 0, 0);
+  --color-box-shadow-window: rgba(0, 0, 0, .5);
+  --color-form-inputs: #eee;
+  --form-nick-background: #182533;
+  --color-monospace-and-code: #f3f3f3;
+  --background-kbd: #333;
+  --color-kbd: #eee;
+  --color-error: #f92772;
+  --color-inputs: #fff;
+  --color-inputs-hover: rgba(255, 255, 255, .4);
+  --color-inputs-placeholders: rgba(255, 255, 255, .7);
+  --color-inputs-placeholders-hover: rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 479px) {
+  :root {
+    --font-size: 16px;
+    --font-size-msg: 16px;
+    --font-size-channel-list: 16px;
+    --font-size-embed-text: 14px;
+    --font-size-inputs: 16px;
+    --font-size-join: 16px;
+  }
+}
+
+// Define fonts
 @font-face {
   font-family: 'SF Mono';
   src: url('fonts/sfmono-regular.eot'); /* IE9 Compat Modes */
@@ -63,72 +131,64 @@ Good, legible Google webfonts for IRC: Archivo, Exo 2, Fira Sans, Heebo, IBM Ple
   src: url('fonts/allianceno1-extrabold.eot?#iefix') format('embedded-opentype'), url('fonts/allianceno1-extrabold.woff2') format('woff2'), url('fonts/allianceno1-extrabold.woff') format('woff'), url('fonts/allianceno1-extrabold.ttf') format('truetype'), url('fonts/allianceno1-extrabold.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
+// Define body base stuff
 body {
-  font: 14px 'Alliance No. 1', -apple-system, 'Roboto', 'Rubik', system-ui, Segoe UI, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, Arial;
+  font: initial;
+  font-family: 'Alliance No. 1', -apple-system, 'Roboto', 'Rubik', system-ui, Segoe UI, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, Arial;
+  font-size: initial;
   /* -moz-osx-font-smoothing: grayscale; */
   -webkit-font-smoothing: subpixel-antialiased;
+  overflow-y: scroll;
   /* text-rendering: geometricPrecision; */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
   text-size-adjust: none;
 }
 
-/* General vars */
-:root {
-  --body-color: rgba(255, 255, 255, .75);
-  --msg-self-color: rgb(236, 248, 255);
-  --msg-self-bg-color: #1b1f27;
-  --msg-action-color: #f1fa8c;
-  --border-color: #20283b;
-  --body-color-muted: #6272a4;
-  --body-bg-color: #0b152b;
-  --button-color: #50fa7b;
-  --button-text-color-hover: #282a36;
-  --overlay-bg-color: rgba(0, 0, 0, .5);
-  --link-color: #f8f8f2;
-  --window-bg-color: #0d162d;
-  --window-heading-color: #44475a;
-  --date-marker-color: rgba(40, 42, 54, .5);
-  --unread-marker-color: #ff79c6;
-  --highlight-bg-color: rgba(255, 255, 255, .08);
-  --highlight-msg-color: #fff;
-  --highlight-border-color: #44475a;
-  --upload-progressbar-color: #50fa7b;
-  --time-color: #374468;
-  --time-color-hover: #42527e;
-  --channel-list-item-hover-background: rgba(255, 255, 255, .05);
-  --font-size: 15px;
-  --font-size-msg: 15px;
-  --font-size-channel-list: 15px;
-  --font-weight-msg: 300;
-  --font-weight-user: 500;
+html * {
+  outline: 0;
+  -webkit-tap-highlight-color: var(--color-webkit-tap);
+  -webkit-text-size-adjust: none;
 }
 
-.from .user {
-  font-weight: var(--font-weight-user);
-}
-
+// Add channel button should be on default font and bigger
 .channel-list-item .add-channel::before {
   font-family: -apple-system, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, Arial;
   font-size: 19px;
 }
 
-/* .from .user::before {
-  content: '<';
+// Channel list hovers
+.channel-list-item.active,
+.channel-list-item {
+  background: transparent;
 }
 
-.from .user::after {
-  content: '>';
-} */
+.channel-list-item:hover,
+.channel-list-item:focus {
+  background: var(--channel-list-item-hover-background);
+  transition: all .55s;
+}
 
-/* Mobile vars */
-@media (max-width: 500px) {
-  :root {
-    --font-size: 16px;
-    --font-size-msg: 16px;
-    --font-size-channel-list: 16px;
+// Sidebar font size
+#sidebar .empty,
+.channel-list-item {
+  font-size: var(--font-size-channel-list);
+}
+
+// Channel list item padding on desktop
+@media (min-width: 600px) {
+  .channel-list-item {
+    padding: 8px 14px;
   }
 }
 
-/* Spacings */
+// Channel list icons
+.channel-list-item[data-type=channel]::before,
+.context-menu-chan::before {
+  content: "\f086";
+}
+
+// Viewport and element spacings
 #loading .window {
   margin: 5px;
 }
@@ -143,9 +203,11 @@ body {
 
 .window {
   border-radius: 5px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, .5);
+  // box-shadow: 0 0 25px var(--color-box-shadow-window);
+  box-shadow: none;
 }
 
+// Viewport and element spacings on mobile
 @media (max-width: 768px) {
   #loading .window {
     margin: 0;
@@ -165,10 +227,11 @@ body {
   }
 }
 
+// Chat timestamps
 #chat .time {
   color: var(--time-color);
-  font-size: 14px;
-  font-weight: 300;
+  font-size: var(--font-size-chat-timestamp);
+  font-weight: var(--font-weight-chat-timestamp);
   opacity: 1;
   order: 8;
   transition: all .55s;
@@ -180,19 +243,27 @@ body {
   opacity: 1;
 }
 
+// User font weight
+.from .user {
+  font-weight: var(--font-weight-user);
+}
+
+// Chat messages
 .messages .msg .from,
 .messages .msg {
   font-size: var(--font-size-msg);
   font-weight: var(--font-weight-msg);
-  line-height: 1.45;
+  line-height: var(--line-height-chat-msg);
 }
 
-@media (max-width: 500px) {
-  .messages .msg {
-    line-height: 1.4;
+// Line height on mobile
+@media (max-width: 479px) {
+  :root {
+    --line-height-chat-msg: 1.4;
   }
 }
 
+// Chat nick alignment on desktop
 @media (min-width: 480px) {
   #chat .from {
     padding-left: 20px;
@@ -200,59 +271,43 @@ body {
   }
 }
 
-/* Styles */
+// General font sizess
 .messages .msg,
 textarea,
 input {
-  font-size: var(--font-size-msg) !important;
+  font-size: var(--font-size-msg);
 }
 
-.channel-list-item.active,
-.channel-list-item {
-  background: transparent;
-}
-
-.channel-list-item:hover,
-.channel-list-item:focus {
-  background: var(--channel-list-item-hover-background);
-  transition: all .55s;
-}
-
-#chat .msg.self {
-  /* background: var(--msg-self-bg-color); */
-}
-
-#chat .msg.self .content {
+// Own messages
+#chat .msg.self .content,
+#chat .msg.self .content * {
   color: var(--msg-self-color);
 }
 
-#chat .msg.self .content * {
-  color: var(--msg-self-color) !important;
-}
-
-#chat .msg[data-type=action] .from::before,
+// Actions via /me command
+#chat .msg[data-type="action"] .from::before,
 #chat .msg[data-type="action"],
 #chat .msg[data-type="action"] .content,
 #chat .msg[data-type="action"] span,
 #chat .msg[data-type="action"].self .user {
-  color: var(--msg-action-color) !important;
+  color: var(--msg-action-color);
 }
 
+// Mobile message alignment
 @media (max-width: 479px) {
   #chat .condensed-summary .from,
   #chat .condensed-summary .time {
-    display: block !important;
+    display: block;
   }
 
   #chat .msg:not(.closed):not([data-type=condensed]),
   #chat .msg:not(.closed):not([data-type=condensed])[data-type="message"] {
     clear: both;
-    display: inline-block;
     float: left;
   }
 
   #chat .msg.closed[data-type=condensed] .msg {
-    display: none !important;
+    display: none;
   }
 
   #chat .time {
@@ -263,46 +318,45 @@ input {
 
   #chat .from {
     flex: 0 0 auto;
-    -webkit-mask-image: linear-gradient(270deg, transparent, var(--window-bg-color) 10px) !important;
-    mask-image: linear-gradient(270deg, transparent, var(--window-bg-color) 10px) !important;
-    padding: 2px 10px 0 0 !important;
-    width: 75px !important;
+    -webkit-mask-image: linear-gradient(270deg, transparent, var(--window-bg-color) 10px);
+    mask-image: linear-gradient(270deg, transparent, var(--window-bg-color) 10px);
+    padding: 2px 10px 0 0;
+    width: 75px;
   }
 
   #chat .content {
-    border-left: 1px solid var(--body-color-muted) !important;
-    flex: 1 1 auto !important;
-    min-width: 0 !important;
-    overflow: hidden !important;
+    border-left: 1px solid var(--body-color-muted);
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
     padding: 2px 5px;
-    text-align: left !important;
+    text-align: left;
   }
 }
 
+// Border colors
 #chat .content,
 #chat .header,
 #chat .userlist,
 #form,
 #windows #form .input {
-  border-color: var(--border-color) !important;
+  border-color: var(--border-color);
 }
 
+// Forms and userlist background-colors
 #chat .userlist .search,
 #form {
-  background: var(--window-bg-color);
+  background-color: var(--window-bg-color);
 }
 
+// Icon colors and placeholder colors
 #chat .count::before,
 #chat .userlist .search::placeholder,
 #form #input::placeholder {
-  color: var(--body-color-muted) !important;
+  color: var(--body-color-muted);
 }
 
-.channel-list-item[data-type=channel]::before,
-.context-menu-chan::before {
-  content: "\f086";
-}
-
+// Sidebar border and width
 #sidebar {
   border-right: 1px solid var(--border-color);
   width: 180px;
@@ -316,46 +370,43 @@ input {
   }
 }
 
-#sidebar .empty,
-.channel-list-item {
-  font-size: var(--font-size-channel-list);
-}
-
-@media (min-width: 600px) {
-  .channel-list-item {
-    padding: 8px 14px;
-  }
-}
-
-.jump-to-input {
-  display: none;
-}
-
+// Hide The Lounge logo
 .logo-container {
   height: 0 !important;
   margin-top: -7px !important;
   opacity: 0 !important;
 }
 
+// For some reason we want to hide jump to input
+.jump-to-input {
+  display: none;
+}
+
+// Margin between networks
 .networks {
   margin-top: 10px;
 }
 
+// Font weights for toggles and bolds
 .channel-list-item[data-type=lobby],
 .irc-bold,
 #chat .toggle-content .head {
-  font-weight: 500;
+  font-weight: var(--font-weight-toggle-chanlist);
 }
 
-#chat.colored-nicks .user.color-31,
-#chat.colored-nicks .user.color-5 {
-  color: #40407a;
-}
-
+// Margin fix
 #chat button.menu,
 #viewport .lt,
 #viewport .rt {
   margin-top: 4px;
+}
+
+// Colored nicks
+// It's okay not to use variables here, these are one-time use
+/* stylelint-disable sh-waqar/declaration-use-variable */
+#chat.colored-nicks .user.color-31,
+#chat.colored-nicks .user.color-5 {
+  color: #40407a;
 }
 
 #chat.colored-nicks .user.color-1 {
@@ -485,31 +536,35 @@ input {
 #chat.colored-nicks .user.color-32 {
   color: #85f27d;
 }
+/* stylelint-enable sh-waqar/declaration-use-variable */
 
+// Background behind "New messages" marker line
 #chat .unread-marker-text::before {
   background: var(--window-bg-color);
 }
 
+// Date change and "New messages marker"
 #chat .date-marker::before {
-  border-color: #97ea70;
+  border-color: var(--color-date-marker);
 }
 
 #chat .date-marker-text::before {
   background: var(--window-bg-color);
-  color: #97ea70;
+  color: var(--color-date-marker);
 }
 
+// Forms
 #form {
   background: var(--window-bg-color);
 }
 
 #windows #form .input {
-  background-color: var(--window-bg-color) !important;
-  color: #eee;
+  background-color: var(--window-bg-color);
+  color: var(--color-form-inputs);
 }
 
 #form #nick {
-  background: #182533;
+  background: var(--form-nick-background);
   color: var(--body-color);
 }
 
@@ -521,60 +576,48 @@ input {
 code,
 .irc-monospace {
   background: var(--window-bg-color);
-  color: #f3f3f3;
+  color: var(--color-monospace-and-code);
 }
 
 kbd {
-  background-color: #333;
+  background-color: var(--background-kbd);
   background-image: linear-gradient(rgba(0, 0, 0, .25), transparent);
   border-color: var(--window-bg-color);
   box-shadow: 0 2px 0 var(--window-bg-color), inset 0 1px 1px #777, inset 0 -1px 3px #222;
-  color: #eee;
+  color: var(--color-kbd);
   text-shadow: 0 -1px 0 var(--window-bg-color);
 }
 
-/* Embeds */
-#chat .toggle-content {
-  background: var(--highlight-bg-color);
-  color: #f3f3f3;
-}
-
-#chat .toggle-content .body {
-  color: #99a2b4;
-}
-
-/* Form elements */
-
+// Form elements
 #chat-container ::placeholder {
-  color: #99a2b4;
+  color: var(--color-chat-container-placeholder);
   opacity: .5;
 }
 
+/* stylelint-disable */
 #chat-container ::input-placeholder {
-  color: #99a2b4;
+  color: var(--color-chat-container-placeholder);
   opacity: .5;
 }
 
 #chat-container :input-placeholder {
-  color: #99a2b4;
+  color: var(--color-chat-container-placeholder);
   opacity: .5;
 }
+/* stylelint-enable */
 
-.window {
-  box-shadow: none;
-}
-
+// Errors
 #chat .error,
 #chat .error .from,
 #chat .channel .highlight,
 #chat .channel .highlight .from,
 #chat .channel .highlight .text {
-  color: #f92772 !important;
+  color: var(--color-error);
 }
 
 #chat .chat-view[data-type=channel] .msg.highlight {
-  background: var(--highlight-bg-color) !important;
-  border-left: 0 !important;
+  background: var(--highlight-bg-color);
+  border-left: 0;
 }
 
 #chat .chat-view[data-type=channel] .msg.highlight .content {
@@ -582,6 +625,7 @@ kbd {
   font-weight: 600;
 }
 
+// Embed thumbs and toggle content
 body #chat .toggle-content .thumb {
   height: 100%;
   max-height: 100%;
@@ -591,10 +635,17 @@ body #chat .toggle-content .thumb {
   width: 90px;
 }
 
+#chat .toggle-content .body {
+  color: var(--color-toggle-content-body);
+}
+
+// Toggle content style
 #chat .toggle-content {
   align-items: center;
+  background: var(--highlight-bg-color);
   border-radius: 5px;
   box-shadow: none;
+  color: var(--color-toggle-content);
   margin-bottom: 3px;
   margin-top: 7px;
   max-width: 100%;
@@ -602,6 +653,7 @@ body #chat .toggle-content .thumb {
   white-space: normal;
 }
 
+// Do not stretch image on mobile except for the images only
 #chat .toggle-content:not(.toggle-type-image) .toggle-thumbnail {
   max-height: 68px;
 }
@@ -615,19 +667,19 @@ body #chat .toggle-content .thumb {
 }
 
 #chat .toggle-content .toggle-text {
-  font-size: 15px;
+  font-size: var(--font-size-embed-text);
   padding: 11px 15px;
 }
 
-@media (max-width: 500px) {
+// Smaller mobile font
+@media (max-width: 479px) {
   #chat .toggle-content .toggle-text {
-    font-size: 14px;
     padding: 8px 10px;
   }
 
   #form #submit,
   #form #upload {
-    font-size: 18px;
+    font-size: var(--font-size-form-submit-mobile);
   }
 }
 
@@ -649,18 +701,18 @@ body #chat .toggle-content .thumb {
 }
 
 #form #input {
-  max-height: 19px !important;
-  overflow-x: none !important;
-  overflow-y: auto !important;
+  max-height: 19px;
+  overflow-x: none;
+  overflow-y: auto;
 }
 
 .textcomplete-item a {
-  color: var(--body-color-muted) !important;
+  color: var(--body-color-muted);
 }
 
 .textcomplete-item a:hover,
 .textcomplete-item a:focus {
-  color: var(--body-color) !important;
+  color: var(--body-color);
 }
 
 .window h2,
@@ -674,7 +726,6 @@ body #chat .toggle-content .thumb {
   padding-top: 0;
 }
 
-#chat .from::after,
 #chat .from::after {
   display: none !important;
 }
@@ -824,7 +875,7 @@ body:not(.public) #connectform h2 {
   background: linear-gradient(-180deg, #34b859, #2ea44f);
   border: 1px solid rgba(255, 255, 255, .05);
   border-radius: 4px;
-  color: #fff;
+  color: var(--color-inputs);
   transition: all 22ms;
 }
 
@@ -836,35 +887,40 @@ body:not(.public) #connectform h2 {
   border-bottom-left-radius: 0;
   border-left: 0;
   border-top-left-radius: 0;
-  color: #fff;
+  color: var(--color-inputs);
   content: '/join #pulina';
-  font-size: 20px;
+  font-size: var(--font-size-join);
   text-transform: lowercase;
   transition: all 22ms;
 }
 
-#connectform input.input {
+body #connectform input.input {
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, .3);
-  color: #fff;
-  font-size: 22px !important;
+  color: var(--color-inputs);
+  font-size: var(--font-size-inputs);
   line-height: 1;
   transition: all 22ms;
 }
 
+#connectform input.input,
+#connect .btn::after {
+  font-size: var(--font-size-inputs);
+}
+
 #connectform input.input::placeholder {
-  color: rgba(255, 255, 255, .7);
+  color: var(--color-inputs-placeholders);
   opacity: 1;
 }
 
 #connectform input.input:hover,
 #connectform input.input:focus {
-  border-color: rgba(255, 255, 255, .4);
+  color: var(--color-inputs-hover);
 }
 
 #connectform input.input:hover::placeholder,
 #connectform input.input:focus::placeholder {
-  color: rgba(255, 255, 255, 1);
+  color: var(--color-inputs-placeholders-hover);
 }
 
 @media (max-width: 760px) {
@@ -873,19 +929,11 @@ body:not(.public) #connectform h2 {
   }
 }
 
-@media (max-width: 1200px) {
-  #connectform input.input,
-  #connect .btn::after {
-    font-size: 16px !important;
-  }
-}
-
 #sidebar .empty {
   display: none;
 }
 
-// Import overrides
-/* Conversation layout, only on mobile */
+// Conversation layout, only on mobile
 @media (max-width: 479px) {
   #chat .date-marker::before {
     top: 1px;
@@ -947,7 +995,7 @@ body:not(.public) #connectform h2 {
     }
 
     .time {
-      color: lighten(#374468, 12%) !important;
+      color: var(--color-timestamp-self-mobile-conversation-layout) !important;
     }
   }
 
@@ -966,7 +1014,6 @@ body:not(.public) #connectform h2 {
   }
 
   #chat .msg[data-type="message"] .from {
-    display: inline-block;
     float: left;
     padding-left: 5px !important;
     text-align: left !important;
