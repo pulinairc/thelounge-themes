@@ -21,7 +21,7 @@ Aiming to be the **perfect** The Lounge theme out there.
 
 | Desktop view  | Mobile conversation layout |
 | ------------- | ------------- |
-| <img src="https://i.imgur.com/fOVc5Gt.png" width="800px" height="auto"> l  | <img src="https://i.imgur.com/MjMWZkz.png" width="390px" height="auto"> 
+| <img src="https://i.imgur.com/fOVc5Gt.png" width="800px" height="auto"> | <img src="https://i.imgur.com/MjMWZkz.png" width="390px" height="auto"> |
 
 ## Installation
 
