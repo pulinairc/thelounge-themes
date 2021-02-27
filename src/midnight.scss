@@ -1,9 +1,11 @@
+// SCSS helper vars
+$breakpoint-mobile: 680px;
+$background-color-msg-self-conversation-layout: lighten(#122042, 9%);
+$color-timestamp-self-mobile-conversation-layout: lighten(#374468, 12%);
+$color-timestamp-highlight-mobile-conversation-layout: lighten(#374468, 22%);
+
 // Variables
 :root {
-  // SCSS helper vars
-  $background-color-msg-self-conversation-layout: lighten(#122042, 9%);
-  $color-timestamp-self-mobile-conversation-layout: lighten(#374468, 12%);
-
   // CSS vars
   --body-color: rgba(255, 255, 255, .75);
   --msg-self-color: rgb(236, 248, 255);
@@ -34,6 +36,7 @@
   --color-chat-container-placeholder: #99a2b4;
   --color-date-marker: #97ea70;
   --color-timestamp-self-mobile-conversation-layout: #{$color-timestamp-self-mobile-conversation-layout};
+  --color-timestamp-highlight-mobile-conversation-layout: #{$color-timestamp-highlight-mobile-conversation-layout};
 
   // Font related
   --font-size: 15px;
@@ -66,7 +69,7 @@
   --color-inputs-placeholders-hover: rgba(255, 255, 255, 1);
 }
 
-@media (max-width: 479px) {
+@media (max-width: $breakpoint-mobile) {
   :root {
     --font-size: 17px;
     --font-size-nick: 17px;
@@ -150,17 +153,17 @@ body {
   -webkit-font-smoothing: subpixel-antialiased;
   overflow-y: scroll;
   /* text-rendering: geometricPrecision; */
-  -webkit-text-size-adjust: none;
-  -ms-text-size-adjust: none;
-  text-size-adjust: none;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 html * {
   outline: 0;
   -webkit-tap-highlight-color: var(--color-webkit-tap);
-  -webkit-text-size-adjust: none;
-  -ms-text-size-adjust: none;
-  text-size-adjust: none;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 // Add channel button should be on default font and bigger
@@ -188,7 +191,7 @@ html * {
 }
 
 // Channel list item padding on desktop
-@media (min-width: 600px) {
+@media (min-width: $breakpoint-mobile) {
   .channel-list-item {
     padding: 8px 14px;
   }
@@ -271,14 +274,14 @@ html * {
 }
 
 // Line height on mobile
-@media (max-width: 479px) {
+@media (max-width: $breakpoint-mobile) {
   :root {
     --line-height-chat-msg: 1.4;
   }
 }
 
 // Chat nick alignment on desktop
-@media (min-width: 480px) {
+@media (min-width: $breakpoint-mobile) {
   #chat .from {
     padding-left: 20px;
     width: 144px;
@@ -308,7 +311,7 @@ input {
 }
 
 // Mobile message alignment
-@media (max-width: 479px) {
+@media (max-width: $breakpoint-mobile) {
   #chat .condensed-summary .from,
   #chat .condensed-summary .time {
     display: block;
@@ -318,6 +321,7 @@ input {
   #chat .msg:not(.closed):not([data-type=condensed])[data-type="message"] {
     clear: both;
     float: left;
+    font-size: var(--font-size-msg);
   }
 
   #chat .msg.closed[data-type=condensed] .msg {
@@ -375,7 +379,7 @@ input {
   width: 180px;
 }
 
-@media (min-width: 770px) {
+@media (min-width: $breakpoint-mobile) {
   .channel-list-item::before {
     line-height: 18px;
     margin-right: 12px;
@@ -408,7 +412,7 @@ input {
   font-weight: var(--font-weight-toggle-chanlist);
 }
 
-@media (max-width: 479px) {
+@media (max-width: $breakpoint-mobile) {
   #chat .toggle-content .head {
     margin-bottom: 5px;
   }
@@ -692,7 +696,7 @@ body #chat .toggle-content .thumb {
 }
 
 // Smaller mobile font
-@media (max-width: 479px) {
+@media (max-width: $breakpoint-mobile) {
   #chat .toggle-content .toggle-text {
     padding: 8px 10px;
   }
@@ -750,7 +754,7 @@ body #chat .toggle-content .thumb {
   display: none !important;
 }
 
-@media (max-width: 479px) {
+@media (max-width: $breakpoint-mobile) {
   #chat .chat-view[data-type=channel] .msg.highlight {
     padding-left: 10px;
   }
@@ -954,7 +958,7 @@ body #connectform input.input {
 }
 
 // Conversation layout, only on mobile
-@media (max-width: 479px) {
+@media (max-width: $breakpoint-mobile) {
   #chat .date-marker::before {
     top: 1px;
   }
@@ -963,11 +967,24 @@ body #connectform input.input {
     white-space: nowrap;
   }
 
+  // Unified font-sizes
+  div[data-type="message"],
+  #chat .msg,
+  #chat .msg.self,
+  #chat .msg .content,
+  #chat .msg.self .content,
+  #chat .chat-view[data-type=channel] .msg.highlight,
+  #chat .msg:only-of-type,
+  #chat .msg:only-of-type .content,
+  #chat .msg.previous-source,
+  #chat .msg.previous-source .content {
+    font-size: var(--font-size-msg);
+  }
+
   // Bubble-like layout
   #chat .msg {
     background: rgba(#122046, .7);
     border-radius: 8px;
-    font-size: var(--font-size-msg);
     margin: 4px 10px;
     max-width: 82%;
     padding: 8px 10px;
@@ -1003,7 +1020,7 @@ body #connectform input.input {
     background: var(--highlight-bg-color-mobile-conversation-layout) !important;
 
     .time {
-      color: var(--color-timestamp-self-mobile-conversation-layout);
+      color: var(--color-timestamp-highlight-mobile-conversation-layout);
     }
 
     &.previous-source {
@@ -1020,7 +1037,6 @@ body #connectform input.input {
 
     // Have to use !imporant here to override
     float: right !important;
-    font-size: var(--font-size-msg);
     justify-self: flex-end;
     margin-left: auto;
     max-width: 82%;
@@ -1067,6 +1083,7 @@ body #connectform input.input {
     clear: both;
     display: block;
     float: none;
+    font-size: var(--font-size-msg);
     white-space: normal;
     width: auto;
   }
