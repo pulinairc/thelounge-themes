@@ -1,12 +1,11 @@
-// SCSS helper vars
+// SCSS helper variables
 $breakpoint-mobile: 680px;
 $background-color-msg-self-conversation-layout: lighten(#122042, 9%);
 $color-timestamp-self-mobile-conversation-layout: lighten(#374468, 12%);
 $color-timestamp-highlight-mobile-conversation-layout: lighten(#374468, 22%);
 
-// Variables
+// CSS helper variables
 :root {
-  // CSS vars
   --body-color: rgba(255, 255, 255, .75);
   --msg-self-color: rgb(236, 248, 255);
   --msg-self-bg-color: #1b1f27;
@@ -978,7 +977,7 @@ body #connectform input.input {
   #chat .msg:only-of-type .content,
   #chat .msg.previous-source,
   #chat .msg.previous-source .content {
-    font-size: var(--font-size-msg);
+    font-size: var(--font-size-msg) !important;
   }
 
   // Bubble-like layout

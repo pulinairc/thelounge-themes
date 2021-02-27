@@ -15,8 +15,9 @@ Aiming to be the **perfect** The Lounge theme out there.
 - Minimal UI
 - Easy on the eyes
 - Conversation layout, see [#2591](https://github.com/thelounge/thelounge/pull/2591#issuecomment-785429158)
-- Automatic day and night themes
+- Automatic theme that has both day/light and night/dark versions based on your operating system setting
 - Fixed preview images with correct dimensions
+- Fixed most of The Lounge style bugs
 - The most readable modern fonts on Retina and 60hz mobile screens
 
 | Desktop view  | Mobile conversation layout |
@@ -35,27 +36,9 @@ Aiming to be the **perfect** The Lounge theme out there.
 Please fork this repository and make your changes.<br>
 If the changes are good we might even accept pull requests.
 
-#### I just want a bigger font to mobile
+#### I want a bigger font to mobile
 
-Add this to Settings > Advanced Settings > Custom Stylesheet:
-
-``` css
-@media (max-width: 700px) {
-  .messages .msg {
-    font-size: 18px !important;
-  }
-
-  .from {
-    font-size: 18px !important;
-  }
-
-  .time {
-    align-self: flex-start;
-    font-size: 15px !important;
-    line-height: 1.9;
-  }
-}
-```
+Change your theme to "Midnight-accessible" from Settings.
 
 ## Development
 

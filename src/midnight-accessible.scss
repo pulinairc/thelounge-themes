@@ -1,6 +1,6 @@
 @import 'midnight';
 
-@media (max-width: 479px) {
+@media (max-width: $breakpoint-mobile) {
   :root {
     --font-size: 19px;
     --font-size-nick: 19px;
@@ -11,4 +11,18 @@
     --font-size-join-button: 16px;
     --font-size-chat-timestamp: 14px;
   }
+}
+
+// Unified font-sizes
+div[data-type="message"],
+#chat .msg,
+#chat .msg.self,
+#chat .msg .content,
+#chat .msg.self .content,
+#chat .chat-view[data-type=channel] .msg.highlight,
+#chat .msg:only-of-type,
+#chat .msg:only-of-type .content,
+#chat .msg.previous-source,
+#chat .msg.previous-source .content {
+  font-size: var(--font-size-msg) !important;
 }
