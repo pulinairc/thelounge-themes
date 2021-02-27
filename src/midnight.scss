@@ -31,14 +31,15 @@
   // Font related
   --font-size: 15px;
   --font-size-msg: 15px;
+  --font-size-nick: 15px;
   --font-size-chat-timestamp: 15px;
   --font-size-channel-list: 15px;
   --font-size-embed-text: 15px;
   --font-size-form-submit-mobile: 18px;
   --font-size-inputs: 22px;
-  --font-size-join: 20px;
+  --font-size-join-button: 20px;
   --font-weight-msg: 300;
-  --font-weight-user: 500;
+  --font-weight-nick: 500;
   --font-weight-toggle-chanlist: 500;
   --font-weight-chat-timestamp: 300;
   --line-height-chat-msg: 1.45;
@@ -60,12 +61,14 @@
 
 @media (max-width: 479px) {
   :root {
-    --font-size: 16px;
-    --font-size-msg: 16px;
+    --font-size: 17px;
+    --font-size-nick: 17px;
+    --font-size-msg: 17px;
     --font-size-channel-list: 16px;
     --font-size-embed-text: 14px;
     --font-size-inputs: 16px;
-    --font-size-join: 16px;
+    --font-size-join-button: 16px;
+    --font-size-chat-timestamp: 14px;
   }
 }
 
@@ -140,8 +143,8 @@ body {
   -webkit-font-smoothing: subpixel-antialiased;
   overflow-y: scroll;
   /* text-rendering: geometricPrecision; */
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
   text-size-adjust: none;
 }
 
@@ -149,6 +152,8 @@ html * {
   outline: 0;
   -webkit-tap-highlight-color: var(--color-webkit-tap);
   -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 // Add channel button should be on default font and bigger
@@ -245,10 +250,12 @@ html * {
 
 // User font weight
 .from .user {
-  font-weight: var(--font-weight-user);
+  font-size: var(--font-size-nick);
+  font-weight: var(--font-weight-nick);
 }
 
 // Chat messages
+.messages .msg .content,
 .messages .msg .from,
 .messages .msg {
   font-size: var(--font-size-msg);
@@ -320,7 +327,7 @@ input {
     flex: 0 0 auto;
     -webkit-mask-image: linear-gradient(270deg, transparent, var(--window-bg-color) 10px);
     mask-image: linear-gradient(270deg, transparent, var(--window-bg-color) 10px);
-    padding: 2px 10px 0 0;
+    padding-right: 10px;
     width: 75px;
   }
 
@@ -329,7 +336,6 @@ input {
     flex: 1 1 auto;
     min-width: 0;
     overflow: hidden;
-    padding: 2px 5px;
     text-align: left;
   }
 }
@@ -391,7 +397,14 @@ input {
 .channel-list-item[data-type=lobby],
 .irc-bold,
 #chat .toggle-content .head {
+  font-size: var(--font-size-embed-text);
   font-weight: var(--font-weight-toggle-chanlist);
+}
+
+@media (max-width: 479px) {
+  #chat .toggle-content .head {
+    margin-bottom: 5px;
+  }
 }
 
 // Margin fix
@@ -889,7 +902,7 @@ body:not(.public) #connectform h2 {
   border-top-left-radius: 0;
   color: var(--color-inputs);
   content: '/join #pulina';
-  font-size: var(--font-size-join);
+  font-size: var(--font-size-join-button);
   text-transform: lowercase;
   transition: all 22ms;
 }
@@ -943,28 +956,47 @@ body #connectform input.input {
     white-space: nowrap;
   }
 
-  #chat .msg .time {
-    margin-right: 5px;
-    position: static;
-    white-space: normal;
-  }
-
   // Bubble-like layout
   #chat .msg {
     background: rgba(#122046, .7);
     border-radius: 8px;
+    font-size: var(--font-size-msg);
     margin: 4px 10px;
     max-width: 82%;
-    padding: 8px 10px 5px 5px;
+    padding: 8px 10px;
+
+    .from .user,
+    .from,
+    .from * {
+      font-size: var(--font-size-nick);
+
+      .only-copy {
+        display: none;
+      }
+    }
+
+    .time {
+      font-size: var(--font-size-chat-timestamp);
+      margin-right: 5px;
+      position: static;
+      white-space: normal;
+    }
+
+    &.previous-source {
+      margin-top: -1px;
+      padding: 5px 10px;
+
+      .content {
+        margin-bottom: -6px;
+      }
+    }
   }
 
   #chat .chat-view[data-type=channel] .msg.highlight {
     background: #2d3e6d !important;
-    padding: 8px 10px 5px 5px;
 
     &.previous-source {
       margin-top: -1px;
-      padding: 1px 5px;
 
       .content {
         margin-bottom: -4px;
@@ -974,11 +1006,13 @@ body #connectform input.input {
 
   #chat .msg.self {
     background: lighten(#122042, 9%);
+
+    // Have to use !imporant here to override
     float: right !important;
+    font-size: var(--font-size-msg);
     justify-self: flex-end;
     margin-left: auto;
     max-width: 82%;
-    padding: 2px 5px 1px;
 
     // No need for own nick on mobile
     .from,
@@ -987,7 +1021,7 @@ body #connectform input.input {
     }
 
     &.previous-source {
-      padding: 2px 5px 1px;
+      font-size: var(--font-size-msg);
 
       .content {
         margin-bottom: -6px;
@@ -999,25 +1033,15 @@ body #connectform input.input {
     }
   }
 
-  #chat .msg.previous-source {
-    margin-top: -1px;
-    padding: 1px 5px;
-
-    .content {
-      margin-bottom: -6px;
-    }
-  }
-
   #chat .msg + .msg.previous-source .time,
   #chat .msg + .msg.previous-source .from {
-    display: none !important;
+    display: none;
   }
 
   #chat .msg[data-type="message"] .from {
     float: left;
-    padding-left: 5px !important;
-    text-align: left !important;
-    width: auto !important;
+    text-align: left;
+    width: auto;
   }
 
   #chat .msg:not([data-type="message"]) .from {
@@ -1028,16 +1052,10 @@ body #connectform input.input {
     display: none;
   }
 
-  #chat .msg[data-type="message"] {
-    flex-wrap: wrap !important;
-  }
-
   #chat .msg[data-type="message"] .content {
     clear: both;
     display: block;
     float: none;
-    padding-bottom: 5px !important;
-    padding-top: 5px !important;
     white-space: normal;
     width: auto;
   }
@@ -1047,7 +1065,7 @@ body #connectform input.input {
   }
 
   #chat .msg:not([data-type="message"]) .content {
-    border: 0 !important;
+    border: 0;
     opacity: .85;
   }
 
@@ -1056,7 +1074,7 @@ body #connectform input.input {
   }
 
   #chat .content {
-    border: 0 !important;
+    border: 0;
     display: block;
   }
 
@@ -1070,23 +1088,5 @@ body #connectform input.input {
 
   #chat .toggle-content:not(.toggle-type-image) .toggle-thumbnail {
     max-height: 100%;
-  }
-}
-
-/* Mobile font sizes */
-@media (max-width: 479px) {
-  .messages .msg,
-  .messages .msg .content {
-    font-size: 17px;
-  }
-
-  .messages .msg .from {
-    font-size: 17px;
-  }
-
-  .messages .msg .time {
-    align-self: flex-start;
-    font-size: 17px;
-    line-height: 1.9;
   }
 }
