@@ -23,6 +23,10 @@ div[data-type="message"],
 #chat .msg:only-of-type,
 #chat .msg:only-of-type .content,
 #chat .msg.previous-source,
+#chat .msg.selfprevious-source,
 #chat .msg.previous-source .content {
   font-size: var(--font-size-msg) !important;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
