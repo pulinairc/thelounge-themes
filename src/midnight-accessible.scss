@@ -1,0 +1,14 @@
+@import 'midnight';
+
+@media (max-width: 479px) {
+  :root {
+    --font-size: 19px;
+    --font-size-nick: 19px;
+    --font-size-msg: 19px;
+    --font-size-channel-list: 16px;
+    --font-size-embed-text: 14px;
+    --font-size-inputs: 16px;
+    --font-size-join-button: 16px;
+    --font-size-chat-timestamp: 14px;
+  }
+}

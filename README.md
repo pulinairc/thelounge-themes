@@ -67,4 +67,5 @@ Add this to Settings > Advanced Settings > Custom Stylesheet:
 For <b>midnight</b>: `scss --watch src/midnight.scss:dist/midnight.css --style compressed`<br>
 For <b>day</b>: `scss --watch src/day.scss:dist/day.css --style compressed`<br>
 For <b>auto-day-midnight</b>: `scss --watch src/auto-day-midnight.scss:dist/auto-day-midnight.css --style compressed`<br>
-For <b>midnight-classic-mobile</b>: scss --watch src/miight-classic-mobile.scss:dist/midnight-classic-mobile.css --style compressed`
+For <b>midnight-classic-mobile</b>: scss --watch src/miight-classic-mobile.scss:dist/midnight-classic-mobile.css --style compressed`<br>
+For <b>midnight-accessible</b>: scss --watch src/miight-accessible.scss:dist/midnight-accessible.css --style compressed`
