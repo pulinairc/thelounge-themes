@@ -970,6 +970,20 @@ body #connectform input.input {
     width: 100%;
   }
 
+  #chat .content {
+    border: 0;
+    display: block;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 3px;
+  }
+
+  #chat .from {
+    padding-left: 0;
+    padding-top: 0;
+  }
+
   #chat .unread-marker-text::before,
   #chat .date-marker-text::before {
     white-space: nowrap;
@@ -997,6 +1011,7 @@ body #connectform input.input {
   #chat .msg {
     background: rgba(#122046, .7);
     border-radius: 8px;
+    display: block;
     margin: 4px 10px;
     max-width: 82%;
     padding: 8px 10px;
@@ -1111,11 +1126,6 @@ body #connectform input.input {
 
   #chat .msg:not([data-type="message"]) .time {
     display: none;
-  }
-
-  #chat .content {
-    border: 0;
-    display: block;
   }
 
   #chat .toggle-content {
