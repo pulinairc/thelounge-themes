@@ -1,3 +1,8 @@
+### 1.0.8: 2021-03-01
+
+* Make sure mobile breakpoint is honored
+* Mobile padding consistency on Midnight themes
+
 ### 1.0.7: 2021-03-01
 
 * Fix date/unread markers for mobile on Midnight and Midnight-accessible
