@@ -1,3 +1,7 @@
+### 1.0.7: 2021-03-01
+
+* Fix date/unread markers for mobile on Midnight and Midnight-accessible
+
 ### 1.0.6: 2021-02-27
 
 * Make sure font sizes are the same everywhere

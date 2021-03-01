@@ -961,10 +961,16 @@ body #connectform input.input {
 
 // Conversation layout, only on mobile
 @media (max-width: $breakpoint-mobile) {
-  #chat .date-marker::before {
-    top: 1px;
+  // Date/unread marker fixes
+  #chat .unread-marker,
+  #chat .date-marker {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
+  #chat .unread-marker-text::before,
   #chat .date-marker-text::before {
     white-space: nowrap;
   }
