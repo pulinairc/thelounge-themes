@@ -1,3 +1,7 @@
+### 1.0.9: 2021-03-01
+
+* Move thelounge-midnight-theme to its own repository
+
 ### 1.0.8: 2021-03-01
 
 * Make sure mobile breakpoint is honored

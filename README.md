@@ -6,6 +6,8 @@
 
 Aiming to be the **perfect** The Lounge theme out there.
 
+**Please note:** This repository does NOT include the main midnight theme. It should be used from its own repository: [thelounge-theme-midnight](https://github.com/ronilaukkarinen/thelounge-theme-midnight) or via npm. Other themes here are mainly for experimental reasons.
+
 ## Requirements
 
 - The Lounge 4.2.0
@@ -47,8 +49,26 @@ Change your theme to "Midnight-accessible" from Settings.
 3. Start coding by running in separate Terminal: `code .` or just use any editor you wish
 4. Run watchers:
 
-For <b>midnight</b>: `scss --watch src/midnight.scss:dist/midnight.css --style compressed`<br>
-For <b>day</b>: `scss --watch src/day.scss:dist/day.css --style compressed`<br>
-For <b>auto-day-midnight</b>: `scss --watch src/auto-day-midnight.scss:dist/auto-day-midnight.css --style compressed`<br>
-For <b>midnight-classic-mobile</b>: `scss --watch src/midnight-classic-mobile.scss:dist/midnight-classic-mobile.css --style compressed`<br>
-For <b>midnight-accessible</b>: `scss --watch src/midnight-accessible.scss:dist/midnight-accessible.css --style compressed`
+For <b>day</b>:
+
+``` bash
+scss --watch src/day.scss:dist/day.css --style compressed
+```
+
+For <b>auto-day-midnight</b>:
+
+``` bash
+scss --watch src/auto-day-midnight.scss:dist/auto-day-midnight.css --style compressed
+```
+
+For <b>midnight-classic-mobile</b>:
+
+``` bash
+scss --watch src/midnight-classic-mobile.scss:dist/midnight-classic-mobile.css --style compressed
+```
+
+For <b>midnight-accessible</b>:
+
+``` bash
+scss --watch src/midnight-accessible.scss:dist/midnight-accessible.css --style compressed
+```
