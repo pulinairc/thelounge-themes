@@ -10,7 +10,8 @@ Aiming to be the **perfect** The Lounge theme out there.
 
 ## Requirements
 
-- The Lounge 4.2.0
+- [thelounge](https://github.com/thelounge/thelounge)
+- [thelounge-theme-midnight](https://github.com/ronilaukkarinen/thelounge-theme-midnight)
 
 ## Features
 
@@ -44,6 +45,7 @@ Change your theme to "Midnight-accessible" from Settings.
 
 ## Development
 
+1. Clone this repo and [thelounge-theme-midnight](https://github.com/ronilaukkarinen/thelounge-theme-midnight)
 1. `cd /path/to/thelounge-themes`
 2. `npm install`
 3. Start coding by running in separate Terminal: `code .` or just use any editor you wish
