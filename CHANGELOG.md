@@ -1,3 +1,7 @@
+### 1.1.0: 2022-04-22
+
+* Fetch updates from thelounge-theme-midnight 1.1.8
+
 ### 1.0.9: 2021-03-01
 
 * Move thelounge-midnight-theme to its own repository
