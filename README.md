@@ -39,13 +39,17 @@ Aiming to be the **perfect** The Lounge theme out there.
 Please fork this repository and make your changes.<br>
 If the changes are good we might even accept pull requests.
 
-Editing only for yourself is easy, since my themes use CSS variables. For example with darker colors and AMOLED in mobile you could use in your **Settings > Appearance > Custom Stylesheet**:
+Editing only for yourself is easy, since my themes use CSS variables. For example with darker colors and AMOLED in mobile/desktop you could use in your **Settings > Appearance > Custom Stylesheet**:
 
 ```css
 /* Variables */
 :root {
   --body-bg-color: #1c1e26;
   --window-bg-color: #191b20;
+  --border-color: #2e2e2e;
+  --time-color: #444;
+  --time-color-hover: #444;
+  --body-color-muted: #666;
   --font-size: 16px;
   --font-size-msg: 16px;
   --font-size-nick: 16px;
@@ -57,11 +61,12 @@ Editing only for yourself is easy, since my themes use CSS variables. For exampl
 /* Amoled on mobile */
 @media (max-width: 680px) {
   :root {
+    --font-size-chat-timestamp: 12px;
     --body-bg-color: #000;
     --window-bg-color: #000;
-    --background-color-msg-self-conversation-layout: #101010;
+    --background-color-msg-self-conversation-layout: #121212;
     --highlight-bg-color-mobile-conversation-layout: #2c2c20;
-    --chat-bubble-background: #080808;
+    --chat-bubble-background: #000;
     --color-timestamp-self-mobile-conversation-layout: #666;
     --color-timestamp-highlight-mobile-conversation-layout: #666;
     --time-color: #666;
@@ -70,14 +75,44 @@ Editing only for yourself is easy, since my themes use CSS variables. For exampl
     --border-color: #222;
   }
 
-  button::before,
-  button {
-    color: var(--body-color-muted) !important;
+  .msg:not(.self) {
+    max-width: calc(100% - 10px) !important;
+    width: 100% !important;
   }
+}
+
+/* Amoled on desktop */
+:root {
+  --font-size-chat-timestamp: 12px;
+  --body-bg-color: #000;
+  --window-bg-color: #000;
+  --background-color-msg-self-conversation-layout: #121212;
+  --highlight-bg-color-mobile-conversation-layout: #2c2c20;
+  --chat-bubble-background: #000;
+  --color-timestamp-self-mobile-conversation-layout: #666;
+  --color-timestamp-highlight-mobile-conversation-layout: #666;
+  --time-color: #666;
+  --time-color-hover: #666;
+  --body-color-muted: #888;
+  --border-color: #222;
+}
+
+.msg:not(.self) {
+  max-width: calc(100% - 10px) !important;
+  width: 100% !important;
+}
+
+button::before,
+button {
+  color: var(--body-color-muted) !important;
 }
 
 .settings-menu li {
   font-size: 16px;
+}
+
+form.message-search input {
+  color: #0d162d !important;
 }
 ```
 
