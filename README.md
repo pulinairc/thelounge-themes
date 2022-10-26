@@ -97,11 +97,6 @@ Editing only for yourself is easy, since my themes use CSS variables. For exampl
   --border-color: #222;
 }
 
-.msg:not(.self) {
-  max-width: calc(100% - 10px) !important;
-  width: 100% !important;
-}
-
 button::before,
 button {
   color: var(--body-color-muted) !important;
