@@ -39,6 +39,48 @@ Aiming to be the **perfect** The Lounge theme out there.
 Please fork this repository and make your changes.<br>
 If the changes are good we might even accept pull requests.
 
+Editing only for yourself is easy, since my themes use CSS variables. For example with darker colors and AMOLED in mobile you could use in your **Settings > Appearance > Custom Stylesheet**:
+
+```css
+/* Variables */
+:root {
+  --body-bg-color: #1c1e26;
+  --window-bg-color: #191b20;
+  --font-size: 16px;
+  --font-size-msg: 16px;
+  --font-size-nick: 16px;
+  --font-size-chat-timestamp: 16px;
+  --font-size-channel-list: 16px;
+  --font-size-embed-text: 16px;
+}
+
+/* Amoled on mobile */
+@media (max-width: 680px) {
+  :root {
+    --body-bg-color: #000;
+    --window-bg-color: #000;
+    --background-color-msg-self-conversation-layout: #101010;
+    --highlight-bg-color-mobile-conversation-layout: #2c2c20;
+    --chat-bubble-background: #080808;
+    --color-timestamp-self-mobile-conversation-layout: #666;
+    --color-timestamp-highlight-mobile-conversation-layout: #666;
+    --time-color: #666;
+    --time-color-hover: #666;
+    --body-color-muted: #888;
+    --border-color: #222;
+  }
+
+  button::before,
+  button {
+    color: var(--body-color-muted) !important;
+  }
+}
+
+.settings-menu li {
+  font-size: 16px;
+}
+```
+
 #### I want a bigger font to mobile
 
 Change your theme to "Midnight-accessible" from Settings.
